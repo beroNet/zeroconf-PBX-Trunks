@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-if [ ! -f /apps/trunk-PBX/etc/asterisk/extensions.conf ] ; then
+if [ ! -f /apps/zeroconf-PBX-Trunks/etc/asterisk/extensions.conf ] ; then
     echo "Copying default confs."
-    mkdir -p /apps/trunk-PBX/etc/asterisk/
-    cp -a /apps/trunk-PBX/conf/* /apps/trunk-PBX/etc/asterisk/
+    mkdir -p /apps/zeroconf-PBX-Trunks/etc/asterisk/
+    cp -a /apps/zeroconf-PBX-Trunks/conf/* /apps/zeroconf-PBX-Trunks/etc/asterisk/
     sync
 fi

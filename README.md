@@ -1,5 +1,5 @@
-trunk-PBX
-=========
+zerconf-PBX-Trunks
+==================
 
 Connect beroFix via SIP or IAX trunk to a provider
 
