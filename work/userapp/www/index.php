@@ -49,7 +49,7 @@ $iaxpeers=implode("<tr></tr>", $tmppeers);
    </table>
   </div>
 
-  <h2>Asterisk trunk</h2>
+  <h2>zeroconf-PBX-trunks</h2>
   <div>You have two possibilities for setting up a trunk, depending on your provider.<br>
   <br>If you use the trunk only for outgoing calls, you have to setup [trunk1iax-gw] context for IAX2 protocol,<br>
   [username] context for SIP protocol.<br><br>
@@ -63,17 +63,12 @@ $iaxpeers=implode("<tr></tr>", $tmppeers);
 
   For SIP, if you are registered using sip_general.conf, everything should be already OK.<br>
 <pre>
-extensions_globals.conf
-=======================
+extensions.conf
+=============== 
+[globals](+)
 TRUNK1=trunkiax1-gw ;or username
 TECH1=IAX2 ;or SIP
 
-sip_general.conf
-================
-register => username:secret@provider_IP_or_hostname/username
-
-extensions.conf
-=============== 
 [incoming-trunk]
 include => local
 ;
@@ -87,6 +82,10 @@ sip.conf
 [username]; to replace with the username given by your provider
 host=IP or hostname of your provider
 secret=secret given by your provider
+
+sip_general.conf
+================
+register => username:secret@provider_IP_or_hostname/username
 
 iax.conf
 ========
