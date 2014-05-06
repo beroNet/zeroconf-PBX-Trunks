@@ -49,7 +49,7 @@ $iaxpeers=implode("<tr></tr>", $tmppeers);
    </table>
   </div>
 
-  <h2>zeroconf-PBX-trunks</h2>
+  <h2>Asterisk zeroconf-PBX-Trunks</h2>
   <div>You have two possibilities for setting up a trunk, depending on your provider.<br>
   <br>If you use the trunk only for outgoing calls, you have to setup [trunk1iax-gw] context for IAX2 protocol,<br>
   [username] context for SIP protocol.<br><br>

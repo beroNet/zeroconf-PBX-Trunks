@@ -57,7 +57,7 @@
     $script_filename = $doc_root.$_SERVER["PHP_SELF"];
     $path_info = pathinfo($script_filename);
     //$path_info="/apps/asterisk/etc/asterisk";
-    $fm_root_atual="/apps/trunk-PBX/";
+    $fm_root_atual="/apps/zeroconf-PBX-Trunks/";
 // +--------------------------------------------------
 // | Config
 // +--------------------------------------------------
@@ -67,7 +67,7 @@
     ini_set("error_reporting",$error_reporting);
     if (!isset($dir_atual)){
         #$dir_atual = $path_info["dirname"]."/";
-        $dir_atual="/apps/trunk-PBX/";
+        $dir_atual="/apps/zeroconf-PBX-Trunks/";
         if (!$islinux) $dir_atual = ucfirst($dir_atual);
         @chmod($dir_atual,0777);
     } else $dir_atual = formatpath($dir_atual);
@@ -152,7 +152,7 @@ class config {
             'upload_ext_filter'=>array(),
             'download_ext_filter'=>array(),
             'error_reporting'=>'',
-            'fm_root'=>'/apps/trunk-PBX/"',
+            'fm_root'=>'/apps/zeroconf-PBX-Trunks/"',
             'cookie_cache_time'=>time()+60*60*24*30, // 30 Dias
             'version'=>'0.9.3'
             );
@@ -845,13 +845,13 @@ function tree($dir_antes,$dir_corrente,$indice){
     
     $is_proibido=true;
     if (
-        $dir_corrente == "/apps/trunk-PBX/etc" || 
-        $dir_corrente == "/apps/trunk-PBX/etc/asterisk" || 
+        $dir_corrente == "/apps/zeroconf-PBX-Trunks/etc" || 
+        $dir_corrente == "/apps/zeroconf-PBX-Trunks/etc/asterisk" || 
         $dir_corrente == "/apps/asterisk/var" || 
         $dir_corrente == "/apps/asterisk/var/log" || 
         $dir_corrente == "/apps/asterisk/var/spool" || 
         $dir_corrente == "/apps/asterisk/sounds" || 
-        $dir_corrente == "/apps/trunk-PBX/" 
+        $dir_corrente == "/apps/zeroconf-PBX-Trunks/" 
     ){
         $is_proibido = false;
     }
