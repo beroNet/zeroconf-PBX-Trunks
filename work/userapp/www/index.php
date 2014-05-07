@@ -70,9 +70,14 @@ TRUNK1=trunkiax1-gw ;or username
 TECH1=IAX2 ;or SIP
 
 [incoming-trunk]
-include => local
 ;
-; sample for incoming SIP calls from provider
+; sample for incoming calls from provider including all local stuff
+;
+;include => local
+;exten => _X.,1,Set(__DIAL_OPTIONS=t)
+;exten => _X.,1,Goto(${EXTEN},Start)
+
+; sample for incoming calls from provider, safe solution
 ;
 exten => username,1,NoOp(Incoming call from Provider)
  same => n,Dial(SIP/10&SIP/20,,t)
